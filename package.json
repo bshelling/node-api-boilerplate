@@ -1,0 +1,33 @@
+{
+  "name": "node-api-boilerplate",
+  "version": "1.0.0",
+  "description": "Node boilerplate for create express apis",
+  "main": "index.js",
+  "repository": "https://github.com/bshelling/node-api-boilerplate",
+  "author": "Brandon Shelling",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.10.0",
+    "@babel/core": "^7.10.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "@babel/preset-env": "^7.10.0",
+    "babel-loader": "^8.1.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "express": "^4.17.1",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "onchange": "^7.0.2",
+    "prettier": "2.0.5",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "start": "node dist/index.js",
+    "restart": "rimraf dist && yarn build && yarn lint && yarn start ",
+    "lint": "prettier --write src",
+    "serve": "nodemon --exec yarn restart"
+  }
+}
